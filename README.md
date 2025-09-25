@@ -4,7 +4,7 @@
 Este proyecto es un sistema para guardar y ordenar información de vuelos de aerolíneas. La idea es que se puedan cargar los vuelos y después verlos ordenados de distintas formas.
 
 Ejemplo de uso:
-Cargar vuelos desde el archivo.
+Cargar vuelos desde el archivo. 
 AMX123, Cancún, 14:30, 4200
 IB456, Madrid, 09:15, 8900
 VIV789, Monterrey, 21:00, 1500
