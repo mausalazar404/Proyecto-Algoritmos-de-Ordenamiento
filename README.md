@@ -12,7 +12,9 @@ En este primer avance, se estableció la base del proyecto, enfocándose en la d
 ## Descripción del Avance 2: Implementación de la Estructura Dinámica (Lista Doblemente Enlazada)
 En este segundo avance, se integró una estructura de datos dinámica para gestionar la colección de vuelos de manera flexible.
 - Clases DLinkVuelo y DListVuelo:DLinkVuelo (Nodo): Representa cada nodo de la lista, conteniendo el objeto Vuelo y punteros a los nodos next (siguiente) y prev (anterior), lo que la define como doblemente enlazada.DListVuelo (Lista): Gestiona la colección de nodos.
-- Operaciones Fundamentales: Se implementaron los mecanismos de gestión esenciales de la lista doblemente enlazada:Inserción en Extremos: addFirst() y add() (que inserta al final).Remoción en Extremos: removeFirst() y removeLast().Consultas: getFirst(), getLast(), length(), empty().Utilidades: mostrar() y clear().Integración: Las funciones de ordenamiento implementadas en el Avance 1 se adaptaron para operar directamente sobre la nueva estructura DListVuelo, permitiendo el ordenamiento de la colección dinámica.
+- Operaciones Fundamentales: Se implementaron los mecanismos de gestión esenciales de la lista doblemente enlazada:
+-- Inserción en Extremos: addFirst() y add() (que inserta al final).Remoción en Extremos: removeFirst() y removeLast().Consultas: getFirst(), getLast(), length(), empty().Utilidades: mostrar() y clear().
+- Integración: Las funciones de ordenamiento implementadas en el Avance 1 se adaptaron para operar directamente sobre la nueva estructura DListVuelo, permitiendo el ordenamiento de la colección dinámica.
 # Instrucciones para Compilar y Ejecutar
 Para compilar este proyecto, se requiere un compilador C++ (se recomienda C++11 o superior). Debes asegurarte de compilar todos los archivos de implementación (.cpp) juntos.Instrucciones para compilar el avance de proyecto:Ejecuta el siguiente comando en la terminal (asegúrate de que todos los archivos .cpp estén en el directorio):Bashg++ -std=c++11 main.cpp vuelo.cpp dlistvuelo.cpp sorts.cpp -o gestor_vuelos
 ## Instrucciones para ejecutar el avance de proyecto:
