@@ -18,7 +18,8 @@ Remoción en Extremos: removeFirst() y removeLast().
 Consultas: getFirst(), getLast(), length(), empty().Utilidades: mostrar() y clear().
 - Integración: Las funciones de ordenamiento implementadas en el Avance 1 se adaptaron para operar directamente sobre la nueva estructura DListVuelo, permitiendo el ordenamiento de la colección dinámica.
 # Instrucciones para Compilar y Ejecutar
-Para compilar este proyecto, se requiere un compilador C++ (se recomienda C++11 o superior). Debes asegurarte de compilar todos los archivos de implementación (.cpp) juntos.Instrucciones para compilar el avance de proyecto:Ejecuta el siguiente comando en la terminal (asegúrate de que todos los archivos .cpp estén en el directorio): g++ dlistVuelo.cpp main.cpp sorts.cpp vuelo.cpp -o programa.
+Para compilar este proyecto, se requiere un compilador C++ (se recomienda C++11 o superior). Debes asegurarte de compilar todos los archivos de implementación (.cpp) juntos.Instrucciones para compilar el avance de proyecto:Ejecuta el siguiente comando en la terminal (asegúrate de que todos los archivos .cpp estén en el directorio): 
+`g++ dlistVuelo.cpp main.cpp sorts.cpp vuelo.cpp -o programa`
 ## Instrucciones para ejecutar el avance de proyecto:
 Ejecuta el siguiente comando en la terminal: programa.exe
 # Desarrollo de Competencias 
