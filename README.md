@@ -23,13 +23,18 @@ Para compilar este proyecto, se requiere un compilador C++ (se recomienda C++11 
 Ejecuta el siguiente comando en la terminal: programa.exe
 # Desarrollo de Competencias 
 ## (Análisis de Complejidad)SICT0301: 
-Evalúa los componentesAnálisis de Complejidad de ComponentesComponenteOperaciónMejor CasoPeor CasoJustificaciónDListVuelo (Lista)addFirst, removeLast$O(1)$$O(1)$Se manipulan directamente los punteros head o tail.DListVuelo (Lista)length, empty$O(1)$$O(1)$Acceso directo al contador size.Bubble SortOrdenamiento$O(n)$$O(n^2)$En el mejor caso (lista ordenada), recorre $O(n)$. En el peor caso, realiza $O(n^2)$ comparaciones.
+Bubble sort: Ordenamiento, mejor caso O(n), peor caso O(n^2).
 ## Determinación de la Complejidad Final del Programa
-La operación dominante en el programa es el ordenamiento mediante Bubble Sort, lo cual establece el límite superior de la complejidad.Complejidad Final del Programa: $O(n^2)$Justificación: El Bubble Sort tiene una complejidad cuadrática $O(n^2)$ en el caso promedio y peor. Aunque las operaciones de la lista son rápidas ($O(1)$), el ordenamiento domina la complejidad global.
+La operación dominante en el programa es el ordenamiento mediante Bubble Sort, lo cual establece el límite superior de la complejidad.
+### Complejidad Final del Programa: $O(n^2)
+### Justificación: El Bubble Sort tiene una complejidad cuadrática O(n^2) en el caso promedio y peor. Aunque las operaciones de la lista son rápidas (O(1)), el ordenamiento domina la complejidad global.
 ## SICT0302: Toma decisiones
 ## Selección de Estructura de Datos (Lista Doblemente Enlazada)
-Se seleccionó la Lista Doblemente Enlazada (DListVuelo) porque proporciona $O(1)$ en las operaciones de inserción y eliminación en los extremos (addFirst, removeLast). Esto es superior a la complejidad $O(n)$ que presentaría un vector al insertar o eliminar elementos al inicio, ya que el vector requiere mover todos los elementos restantes.
+Se seleccionó la Lista Doblemente Enlazada (DListVuelo) porque proporciona O(1) en las operaciones de inserción y eliminación en los extremos (addFirst, removeLast). Esto es superior a la complejidad O(n) que presentaría un vector al insertar o eliminar elementos al inicio, ya que el vector requiere mover todos los elementos restantes.
 ## Selección de Algoritmo de Ordenamiento (Bubble Sort)
-Se eligió Bubble Sort por su facilidad de implementación sobre una lista enlazada, ya que la estrategia de intercambiar solo los valores del objeto Vuelo dentro de los nodos es sencilla de codificar. Si bien se sacrifica la eficiencia (complejidad $O(n^2)$), se logra una solución simple y directa para el requisito de ordenamiento.
+
+Se eligió Bubble Sort por su facilidad de implementación sobre una lista enlazada, ya que la estrategia de intercambiar solo los valores del objeto Vuelo dentro de los nodos es sencilla de codificar. Se logra una solución simple y directa para el requisito de ordenamiento.
 ## SICT0303: Implementa acciones científicas
-Mecanismos de Consulta: La consulta a los extremos (getFirst, getLast) se realiza con eficiencia $O(1)$ al devolver directamente el contenido de los punteros head y tail.Mecanismos de Validación: El código implementa manejo de errores lanzando std::runtime_error en las funciones de consulta y remoción (getFirst, removeLast, etc.) si la lista se encuentra vacía.Implementación del Ordenamiento: La lógica de Bubble Sort se implementa correctamente sobre la lista al intercambiar los objetos Vuelo con la función std::swap, lo que reordena lógicamente los datos sin la complejidad de manipular los punteros next y prev de los nodos.
+### Mecanismos de Consulta: La consulta a los extremos (getFirst, getLast) se realiza con eficiencia O(1) al devolver directamente el contenido de los punteros head y tail.
+### Mecanismos de Validación: El código implementa manejo de errores lanzando std::runtime_error en las funciones de consulta y remoción (getFirst, removeLast, etc.) si la lista se encuentra vacía.
+### Implementación del Ordenamiento: La lógica de Bubble Sort se implementa correctamente sobre la lista al intercambiar los objetos Vuelo con la función std::swap, lo que reordena lógicamente los datos sin la complejidad de manipular los punteros next y prev de los nodos.
