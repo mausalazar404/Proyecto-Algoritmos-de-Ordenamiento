@@ -3,7 +3,7 @@
 
 #include "dlistVuelo.h"
 
-void bubbleSortPrecio(DListVuelo &lista);
-void bubbleSortDestino(DListVuelo &lista);
+void mergeSortPrecio(DListVuelo &lista);
+void mergeSortDestino(DListVuelo &lista);
 
 #endif
