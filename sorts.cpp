@@ -15,7 +15,7 @@ void mergeSortPrecio(DListVuelo& lista) {
     DLinkVuelo* newHead = mergeSortRecursive(lista.getHead(), true);
     lista.setHead(newHead);
     lista.updateTail(); 
-    std::cout << "\n✅ Lista ordenada por Precio (O(n log n))." << std::endl;
+    std::cout << "\nLista ordenada por Precio." << std::endl;
 }
 
 void mergeSortDestino(DListVuelo& lista) {
@@ -23,8 +23,8 @@ void mergeSortDestino(DListVuelo& lista) {
 
     DLinkVuelo* newHead = mergeSortRecursive(lista.getHead(), false);
     lista.setHead(newHead);
-    lista.updateTail(); // Reconstruye 'prev', 'tail' y 'size'
-    std::cout << "\n✅ Lista ordenada por Destino (O(n log n))." << std::endl;
+    lista.updateTail(); 
+    std::cout << "Lista ordenada por Destino." << std::endl;
 }
 
 
