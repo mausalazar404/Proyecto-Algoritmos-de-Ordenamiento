@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 const string NOMBRE_ARCHIVO = "vuelos.txt";
 
 
@@ -148,7 +149,7 @@ int main() {
                 if (lista.length() <= 1) {
                     cout << "\nLa lista debe tener al menos 2 vuelos para ordenar." << endl;
                 } else {
-                    bubbleSortPrecio(lista);
+                    mergeSortPrecio(lista);
                     cout << "\n--- VUELOS ORDENADOS POR PRECIO (ASCENDENTE) ---" << endl;
                     lista.mostrar();
                 }
@@ -157,7 +158,7 @@ int main() {
                 if (lista.length() <= 1) {
                     cout << "\nLa lista debe tener al menos 2 vuelos para ordenar." << endl;
                 } else {
-                    bubbleSortDestino(lista);
+                    mergeSortDestino(lista);
                     cout << "\n--- VUELOS ORDENADOS POR DESTINO (ALFABÉTICO) ---" << endl;
                     lista.mostrar();
                 }
