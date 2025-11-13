@@ -68,7 +68,7 @@ void guardarDatos(DListVuelo &lista) {
     }
 
     archivo.close();
-    cout << "✅ DATOS GUARDADOS: " << lista.length() << " vuelos guardados exitosamente en " << NOMBRE_ARCHIVO << endl;
+    cout << "DATOS GUARDADOS: " << lista.length() << " vuelos guardados exitosamente en " << NOMBRE_ARCHIVO << endl;
 }
 
 
@@ -129,7 +129,7 @@ int main() {
             cout << "\n Entrada inválida. Intente de nuevo." << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            opcion = 0; // Asegura que el loop continúe
+            opcion = 0; 
             continue;
         }
 
