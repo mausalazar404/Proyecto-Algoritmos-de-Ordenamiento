@@ -3,7 +3,7 @@ Este proyecto es un sistema de gestión de vuelos que permite administrar una co
 Para gestionar los datos, el sistema utiliza una Lista Doblemente Enlazada (DListVuelo), una estructura que optimiza las operaciones de inserción y eliminación en los extremos de la lista, asegurando que estas se realicen de manera eficiente.
 Para el ordenamiento de los datos, el sistema utiliza el algoritmo Bubble Sort. Este algoritmo se implementa para ordenar los vuelos según criterios como el precio o el destino, demostrando la capacidad del sistema para reordenar la estructura de datos.
 Este sistema combina la gestión dinámica de una Lista Doblemente Enlazada con el algoritmo de ordenamiento Bubble Sort, proporcionando una herramienta funcional y modular para la administración de rutas aéreas.
-# Descripción de Avances1. 
+# Descripción de Avances 
 ## Descripción del Avance 1: 
 ### Implementación de la Lógica de Datos y Ordenamiento
 En este primer avance, se estableció la base del proyecto, enfocándose en la definición de la estructura de datos que representa los vuelos y la lógica fundamental para el ordenamiento.   
