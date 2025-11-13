@@ -18,6 +18,7 @@ class DListVuelo {
 public:
     DListVuelo();
 
+
     void addFirst(Vuelo v);
     void add(Vuelo v);
     Vuelo getFirst();
@@ -28,12 +29,14 @@ public:
     bool empty();
     void clear();
     void mostrar();
+    
     DLinkVuelo* getHead(){ 
         return head;
     }
-    DLinkVuelo* getTail(){ 
-        return tail;
+    void setHead(DLinkVuelo* newHead) { 
+        head = newHead; 
     }
+    void updateTail(); 
 
 private:
     DLinkVuelo* head;
