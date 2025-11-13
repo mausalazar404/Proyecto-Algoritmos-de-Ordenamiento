@@ -21,7 +21,7 @@ Consultas: getFirst(), getLast(), length(), empty().Utilidades: mostrar() y clea
 Para compilar este proyecto, se requiere un compilador C++ (se recomienda C++11 o superior). Debes asegurarte de compilar todos los archivos de implementación (.cpp) juntos.Instrucciones para compilar el avance de proyecto:Ejecuta el siguiente comando en la terminal (asegúrate de que todos los archivos .cpp estén en el directorio): 
 `g++ dlistVuelo.cpp main.cpp sorts.cpp vuelo.cpp -o programa`
 ## Instrucciones para ejecutar el avance de proyecto:
-Ejecuta el siguiente comando en la terminal: programa.exe
+Ejecuta el siguiente comando en la terminal: `programa.exe`
 # Desarrollo de Competencias 
 ## (Análisis de Complejidad)SICT0301: 
 Bubble sort: Ordenamiento, mejor caso O(n), peor caso O(n^2).
