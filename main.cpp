@@ -11,7 +11,7 @@ using namespace std;
 
 const string NOMBRE_ARCHIVO = "vuelos.txt";
 
-
+// Complejidad: O(n) 
 void cargarDatos(DListVuelo &lista) {
     ifstream archivo(NOMBRE_ARCHIVO);
     string linea;
@@ -19,14 +19,14 @@ void cargarDatos(DListVuelo &lista) {
     if (!archivo.is_open()) {
         cout << "AVISO: Archivo " << NOMBRE_ARCHIVO << " no encontrado. Iniciando con lista vacía." << endl;
         // Se agregan vuelos de prueba si el archivo no existe
-        lista.add(Vuelo("AMX123", "Cancun", "14:30", 4200));
-        lista.add(Vuelo("IB456", "Madrid", "09:15", 8900));
-        lista.add(Vuelo("VIV789", "Monterrey", "21:00", 1500));
+        lista.add(Vuelo("AMX123", "Cancun", "14:30", 4200)); // O(1)
+        lista.add(Vuelo("IB456", "Madrid", "09:15", 8900)); // O(1)
+        lista.add(Vuelo("VIV789", "Monterrey", "21:00", 1500)); // O(1)
         cout << "Vuelos de muestra agregados." << endl;
         return;
     }
 
-    while (getline(archivo, linea)) {
+    while (getline(archivo, linea)) { 
         stringstream ss(linea);
         string num, dest, hora, prec_str;
         double precio;
@@ -38,7 +38,7 @@ void cargarDatos(DListVuelo &lista) {
             
             try {
                 precio = stod(prec_str);
-                lista.add(Vuelo(num, dest, hora, precio));
+                lista.add(Vuelo(num, dest, hora, precio)); // O(1)
             } catch (const invalid_argument& e) {
                 cerr << "ERROR: Datos inválidos en la línea: " << linea << endl;
             }
@@ -49,6 +49,7 @@ void cargarDatos(DListVuelo &lista) {
     cout << "DATOS CARGADOS: " << lista.length() << " vuelos cargados desde " << NOMBRE_ARCHIVO << endl;
 }
 
+// Complejidad: O(n) 
 void guardarDatos(DListVuelo &lista) {
     ofstream archivo(NOMBRE_ARCHIVO); 
 
@@ -58,7 +59,7 @@ void guardarDatos(DListVuelo &lista) {
     }
 
     DLinkVuelo* actual = lista.getHead(); 
-    while (actual) {
+    while (actual) { 
         archivo << actual->vuelo.getNumero() << ","
                 << actual->vuelo.getDestino() << ","
                 << actual->vuelo.getHora() << ","
@@ -72,7 +73,7 @@ void guardarDatos(DListVuelo &lista) {
 }
 
 
-
+// Complejidad: O(1)
 void mostrarMenu() {
     cout << "\n==================================" << endl;
     cout << "  SISTEMA DE GESTIÓN DE VUELOS" << endl;
@@ -88,6 +89,7 @@ void mostrarMenu() {
     cout << "Seleccione una opción: ";
 }
 
+// Complejidad: O(1)
 void agregarVuelo(DListVuelo &lista) {
     string num, dest, hora;
     double precio;
@@ -108,23 +110,25 @@ void agregarVuelo(DListVuelo &lista) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
-    lista.add(Vuelo(num, dest, hora, precio));
-    cout << "✈️ Vuelo " << num << " agregado exitosamente al final de la lista." << endl;
+    lista.add(Vuelo(num, dest, hora, precio)); // O(1)
+    cout << " Vuelo " << num << " agregado exitosamente al final de la lista." << endl;
 }
 
 
 
+// Complejidad: O(1) para la inicialización.
+// La complejidad de las opciones del switch es: O(n) (caso 1), O(1) (caso 2, 5), O(n log n) (caso 3, 4), O(n) (caso 6).
 int main() {
     DListVuelo lista;
     int opcion;
 
-    // Carga inicial de datos
+    // O(n)
     cargarDatos(lista);
 
     do {
-        mostrarMenu();
+        mostrarMenu(); // O(1)
 
-        // Validación de entrada para la opción del menú
+        // Validación de entrada O(1)
         if (!(cin >> opcion)) {
             cout << "\n Entrada inválida. Intente de nuevo." << endl;
             cin.clear();
@@ -135,35 +139,25 @@ int main() {
 
         switch (opcion) {
             case 1: // Mostrar todos
-                if (lista.empty()) {
-                    cout << "\nLa lista de vuelos está vacía." << endl;
-                } else {
-                    cout << "\n--- LISTA ACTUAL DE VUELOS (" << lista.length() << " elementos) ---" << endl;
-                    lista.mostrar();
-                }
+                // O(n)
+                lista.mostrar();
                 break;
             case 2: // Agregar
+                // O(1)
                 agregarVuelo(lista);
                 break;
             case 3: // Ordenar por Precio
-                if (lista.length() <= 1) {
-                    cout << "\nLa lista debe tener al menos 2 vuelos para ordenar." << endl;
-                } else {
-                    mergeSortPrecio(lista);
-                    cout << "\n--- VUELOS ORDENADOS POR PRECIO (ASCENDENTE) ---" << endl;
-                    lista.mostrar();
-                }
+                // O(n log n)
+                mergeSortPrecio(lista);
+                lista.mostrar();
                 break;
             case 4: // Ordenar por Destino
-                if (lista.length() <= 1) {
-                    cout << "\nLa lista debe tener al menos 2 vuelos para ordenar." << endl;
-                } else {
-                    mergeSortDestino(lista);
-                    cout << "\n--- VUELOS ORDENADOS POR DESTINO (ALFABÉTICO) ---" << endl;
-                    lista.mostrar();
-                }
+                // O(n log n)
+                mergeSortDestino(lista);
+                lista.mostrar();
                 break;
             case 5: // Remover el primer vuelo
+                // O(1)
                 try {
                     Vuelo removido = lista.removeFirst();
                     cout << "\n Vuelo " << removido.getNumero() << " removido exitosamente de la cabeza de la lista." << endl;
@@ -172,6 +166,7 @@ int main() {
                 }
                 break;
             case 6: // Guardar datos
+                // O(n)
                 guardarDatos(lista);
                 break;
             case 7: // Salir
