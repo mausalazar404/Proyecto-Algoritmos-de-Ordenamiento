@@ -1,11 +1,13 @@
 #include "dlistVuelo.h"
 #include <stdexcept>
 
-
+// Complejidad: O(1)
 DLinkVuelo::DLinkVuelo(Vuelo v) : vuelo(v), next(nullptr), prev(nullptr) {}
+
+// Complejidad: O(1)
 DListVuelo::DListVuelo() : head(nullptr), tail(nullptr), size(0) {}
 
-
+// Complejidad: O(1)
 void DListVuelo::addFirst(Vuelo v) {
     DLinkVuelo* nuevo = new DLinkVuelo(v);
     if (!head) {
@@ -18,7 +20,7 @@ void DListVuelo::addFirst(Vuelo v) {
     size++;
 }
 
-
+// Complejidad: O(1)
 void DListVuelo::add(Vuelo v) {
     if (!head) {
         addFirst(v);
@@ -31,13 +33,13 @@ void DListVuelo::add(Vuelo v) {
     size++;
 }
 
-
+// Complejidad: O(1)
 Vuelo DListVuelo::getFirst(){
     if (empty()) throw runtime_error("Lista vacía");
     return head->vuelo;
 }
 
-
+// Complejidad: O(1)
 Vuelo DListVuelo::removeFirst() {
     if (empty()) throw runtime_error("Lista vacía");
     DLinkVuelo* victima = head;
@@ -53,13 +55,13 @@ Vuelo DListVuelo::removeFirst() {
     return val;
 }
 
-
+// Complejidad: O(1)
 Vuelo DListVuelo::getLast(){
     if (empty()) throw runtime_error("Lista vacía");
     return tail->vuelo;
 }
 
-
+// Complejidad: O(1)
 Vuelo DListVuelo::removeLast() {
     if (empty()) throw runtime_error("Lista vacía");
     DLinkVuelo* victima = tail;
@@ -75,22 +77,22 @@ Vuelo DListVuelo::removeLast() {
     return val;
 }
 
-
+// Complejidad: O(1)
 int DListVuelo::length(){
     return size;
 }
 
-
+// Complejidad: O(1)
 bool DListVuelo::empty(){
     return size == 0;
 }
 
-
+// Complejidad: O(n)
 void DListVuelo::clear() {
     while (!empty()) removeFirst();
 }
 
-
+// Complejidad: O(n)
 void DListVuelo::mostrar(){
     DLinkVuelo* actual = head;
     while (actual) {
@@ -100,6 +102,7 @@ void DListVuelo::mostrar(){
     cout << "----------------------" << endl;
 }
 
+// Complejidad: O(n)
 void DListVuelo::updateTail() {
     if (!head) {
         tail = nullptr;
