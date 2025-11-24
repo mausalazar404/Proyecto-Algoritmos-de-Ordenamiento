@@ -38,7 +38,9 @@ la lista completa de vuelos mostrando: Número | Destino | Hora | $Precio.
 La sobrescritura del archivo vuelos.txt con el estado actual de la lista (Opción 6)
 # Desarrollo de Competencias 
 ## (Análisis de Complejidad)SICT0301: 
-Merge sort: Ordenamiento, mejor caso O(nlogn), peor caso O(nlogn).
+El algoritmo Merge Sort tiene una complejidad de O(nlog n) en el mejor caso, caso promedio y peor caso.  Este rendimiento se logra gracias a la aplicación de la estrategia "Divide y Vencerás". El proceso consta de dos fases principales:
+- La División (Factor log n): El algoritmo divide la lista de N vuelos recursivamente en dos mitades hasta que cada sublista contiene un solo elemento. El número de veces que se puede dividir la lista es el factor log n (la altura del árbol de recursión). 
+- La Fusión (Factor O(n)): En cada uno de esos log n niveles, el algoritmo realiza la operación de fusión (merge), donde visita y compara todos los n elementos para unirlos de forma ordenada en una sola lista más grande. Esto significa que el trabajo de comparación por cada nivel es O(n).Al multiplicar el trabajo por nivel O(n) por el número de niveles log n, la complejidad total es O(nlog n). La gran ventaja del Merge Sort es que esta cantidad de trabajo es constante y no depende del estado inicial de los datos (es decir, si los vuelos están ordenados o no), lo que asegura que su complejidad
 ## Determinación de la Complejidad Final del Programa
 La operación dominante en el programa es el ordenamiento mediante merge Sort, lo cual establece el límite superior de la complejidad.
 ### Complejidad Final del Programa: O(nlogn)
